@@ -19,5 +19,5 @@ registrationForm.addEventListener("submit", async (e) => {
 })
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await RegistrationHandler.sessionHandler(UserInterfaceString.SESSION_DOMAIN)
+    await RegistrationHandler.handleSession(UserInterfaceString.SESSION_DOMAIN)
 })
