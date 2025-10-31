@@ -13,10 +13,43 @@
     <form style="display: flex; flex-direction: column;" id="registration-form" class="registration-form">
         <input type="email" id="email" class="email" placeholder="Email:">
         <input type="password" id="password" class="password" placeholder="Password:">
-        <button>Sign Up</button>
+        <p id="feedback-area"></p>
+        <button type="submit">Sign Up</button>
     </form>
 </head>
 <body>
     
 </body>
+<script>
+    const registrationForm = document.getElementById("registration-form");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const feedbackArea = document.getElementById("feedback-area")
+
+    registrationForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const response = await fetch("http://localhost:8000/api/auth/signup", {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                "email" : emailInput.value,
+                "password" : passwordInput.value
+            })
+        })
+        if(response.ok) {
+            const data = await response.json();
+            window.location.href = "/sigin.html"
+        } else {
+            const data = await response.json();
+            if (!data.correct_schema) {
+                feedbackArea.textContent = data.error
+            } else if(data.user_exists) {
+                feedbackArea.textContent = "user already exists"
+            } 
+        }
+    })
+
+</script>
 </html>
