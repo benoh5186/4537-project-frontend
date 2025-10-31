@@ -7,11 +7,64 @@
 </head>
 <body>
 
-    <form style="display: flex; flex-direction: column;" id="registration-form" class="registration-form">
+    <form style="display: flex; flex-direction: column;" id="sign-in-form" class="sign-in-form">
         <input type="email" id="email" class="email" placeholder="Email:">
         <input type="password" id="password" class="password" placeholder="Password:">
+        <p id="feedback-area"></p>
         <button type="submit">Sign in</button>
     </form>
     
 </body>
+
+<script>
+    let APIUsage = null 
+    let userEmail = null
+    let isAdmin = null
+
+
+    const signInForm = document.getElementById("sign-in-form");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const feedbackArea = document.getElementById("feedback-area")
+
+    signInForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const response = await fetch("http://localhost:8000/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify({
+                "email" : emailInput.value,
+                "password" : passwordInput.value
+            })
+        })
+        if(response.ok) {
+            const data = await response.json();
+            const user = data.user 
+            APIUsage = user.api_token
+            userEmail = user.email
+            isAdmin = user.is_admin
+            window.location.href = "../service/landing_page.html"
+        } else {
+            const data = await response.json();
+            const status = response.status
+            console.log(data)
+            if (status === 400) {
+                feedbackArea.textContent = "Incorrect Password"
+
+            } else if(status === 401) {
+                feedbackArea.textContent = "No user exists with that email"
+            } else if (status === 422) {
+                const issue = data.detail 
+                if (!issue.email) {
+                    feedbackArea.textContent = "incorrect email format"
+                } else if (!issue.password) {
+                    feedbackArea.textContent = "password must be at least 8 length long"
+                }
+            }
+        }
+    })
+
+</script>
 </html>
