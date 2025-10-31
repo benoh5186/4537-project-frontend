@@ -1,3 +1,6 @@
+import { UserInterfaceString } from "../lang/en/en.js"
+
+
 class AuthHandler {
     static async makeRequest(url, body) {
         const response = await fetch(url, {
@@ -16,9 +19,9 @@ class AuthHandler {
     static handleValidationError(data, feedbackArea) {
         const issue = data.detail 
         if (!issue.email) {
-            feedbackArea.textContent = "incorrect email format"
+            feedbackArea.textContent = UserInterfaceString.INCORRECT_EMAIL_FORMAT;
         } else if (!issue.password) {
-            feedbackArea.textContent = "password must be at least 8 length long"
+            feedbackArea.textContent = UserInterfaceString.INCORRECT_PASSWORD_LENGTH;
         }
     }
 }
@@ -34,7 +37,7 @@ class RegistrationHandler extends AuthHandler{
             const status = response.status
             console.log(data)
             if (status === 409) {
-                feedbackArea.textContent = "User already exists with that email"
+                feedbackArea.textContent = UserInterfaceString.USER_ALREADY_EXISTS;
 
             } else if (status === 422) {
                 this.handleValidationError(data, feedbackArea)
@@ -54,10 +57,10 @@ class LoginHandler extends AuthHandler{
             const status = response.status
             console.log(data)
             if (status === 400) {
-                feedbackArea.textContent = "Incorrect Password"
+                feedbackArea.textContent = UserInterfaceString.INCORRECT_PASSWORD;
 
             } else if(status === 401) {
-                feedbackArea.textContent = "No user exists with that email"
+                feedbackArea.textContent = UserInterfaceString.USER_NOT_FOUND
             } else if (status === 422) {
                 this.handleValidationError(data, feedbackArea)
             }
