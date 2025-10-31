@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <form style="display: flex; flex-direction: column;" id="registration-form" class="registration-form">
-        <input type="email" id="email" class="email" placeholder="Email:">
+        <input type="text" id="email" class="email" placeholder="Email:">
         <input type="password" id="password" class="password" placeholder="Password:">
         <p id="feedback-area"></p>
         <button type="submit">Sign Up</button>
@@ -35,19 +35,30 @@
             },
             body: JSON.stringify({
                 "email" : emailInput.value,
-                "password" : passwordInput.value
+                "password" : passwordInput.value,
+                "is_admin" : false 
             })
         })
         if(response.ok) {
             const data = await response.json();
-            window.location.href = "/sigin.html"
+            window.location.href = "/signin.html"
         } else {
             const data = await response.json();
-            if (!data.correct_schema) {
-                feedbackArea.textContent = data.error
-            } else if(data.user_exists) {
-                feedbackArea.textContent = "user already exists"
-            } 
+            const issue = data.detail 
+            console.log(data)
+            if (issue.correct_schema) {
+                if (issue.user_exists) {
+                feedbackArea.textContent = "User already exists with that email"
+            }}
+            else {
+                if (!issue.email) {
+                feedbackArea.textContent = "incorrect email format"
+                } else if (!issue.password) {
+                    feedbackArea.textContent = "password must be at least 8 length long"
+                }
+            }
+
+
         }
     })
 
