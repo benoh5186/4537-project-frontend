@@ -20,44 +20,5 @@
 <body>
     
 </body>
-<script>
-    const registrationForm = document.getElementById("registration-form");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const feedbackArea = document.getElementById("feedback-area")
-
-    registrationForm.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const response = await fetch("http://localhost:8000/api/auth/signup", {
-            method: "POST",
-            headers: {
-                "Content-Type" : "application/json"
-            },
-            body: JSON.stringify({
-                "email" : emailInput.value,
-                "password" : passwordInput.value,
-                "is_admin" : false 
-            })
-        })
-        if(response.ok) {
-            window.location.href = "../auth/signin.html"
-        } else {
-            const data = await response.json();
-            const status = response.status
-            console.log(data)
-            if (status === 409) {
-                feedbackArea.textContent = "User already exists with that email"
-
-            } else if (status === 422) {
-                const issue = data.detail 
-                if (!issue.email) {
-                    feedbackArea.textContent = "incorrect email format"
-                } else if (!issue.password) {
-                    feedbackArea.textContent = "password must be at least 8 length long"
-                }
-            }
-        }
-    })
-
-</script>
+<script type="module" src="./registration.js"></script>
 </html>
