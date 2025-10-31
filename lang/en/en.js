@@ -3,6 +3,8 @@ export class UserInterfaceString {
 
     static SIGN_UP_BUTTON = "Sign Up"
 
+    static SESSION_DOMAIN = "http://localhost:8000/api/auth/session"
+
     static LOGIN_DOMAIN = "http://localhost:8000/api/auth/login"
 
     static REGISTRATION_DOMAIN = "http://localhost:8000/api/auth/signup"

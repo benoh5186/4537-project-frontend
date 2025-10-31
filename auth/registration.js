@@ -17,3 +17,7 @@ registrationForm.addEventListener("submit", async (e) => {
         {"email" : emailInput.value, "password" : passwordInput.value, "is_admin" : false})
     await RegistrationHandler.handleResponse(response, feedbackArea)
 })
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await RegistrationHandler.sessionHandler(UserInterfaceString.SESSION_DOMAIN)
+})

@@ -17,3 +17,7 @@ signInForm.addEventListener("submit", async (e) => {
         {"email" : emailInput.value, "password" : passwordInput.value})
     await LoginHandler.handleResponse(response, feedbackArea)
 })
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await LoginHandler.sessionHandler(UserInterfaceString.SESSION_DOMAIN)
+})

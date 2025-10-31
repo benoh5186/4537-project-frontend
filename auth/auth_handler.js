@@ -8,7 +8,8 @@ class AuthHandler {
         headers: {
             "Content-Type" : "application/json"
         },
-        body: JSON.stringify(body)
+        body: JSON.stringify(body),
+        credentials: "include"
     })
     return response
     }
@@ -23,6 +24,15 @@ class AuthHandler {
         } else if (!issue.password) {
             feedbackArea.textContent = UserInterfaceString.INCORRECT_PASSWORD_LENGTH;
         }
+    }
+
+    static async sessionHandler(url) {
+        const response = await fetch(url, {
+            credentials : "include"
+        })
+        if (response.ok) {
+            window.location.href = "../service/landing_page.html"
+        } 
     }
 }
 
