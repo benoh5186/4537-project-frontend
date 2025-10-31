@@ -40,25 +40,22 @@
             })
         })
         if(response.ok) {
-            const data = await response.json();
             window.location.href = "/signin.html"
         } else {
             const data = await response.json();
-            const issue = data.detail 
+            const status = response.status
             console.log(data)
-            if (issue.correct_schema) {
-                if (issue.user_exists) {
+            if (status === 409) {
                 feedbackArea.textContent = "User already exists with that email"
-            }}
-            else {
+
+            } else if (status === 422) {
+                const issue = data.detail 
                 if (!issue.email) {
-                feedbackArea.textContent = "incorrect email format"
+                    feedbackArea.textContent = "incorrect email format"
                 } else if (!issue.password) {
                     feedbackArea.textContent = "password must be at least 8 length long"
                 }
             }
-
-
         }
     })
 
