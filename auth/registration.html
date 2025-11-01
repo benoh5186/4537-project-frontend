@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <form style="display: flex; flex-direction: column;" id="registration-form" class="registration-form">
-        <input type="text" id="email" class="email">
-        <input type="password" id="password" class="password">
-        <p id="feedback-area"></p>
-        <button type="submit" id="sign-up-button"></button>
-    </form>
+    <link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
-    
+    <div class="auth-div">
+        <h1 class="auth-header" id="auth-header"></h1>
+        <form style="display: flex; flex-direction: column;" id="registration-form" class="auth-form">
+            <div class="input-div">
+                <label for="email" class="email-label label" id="email-label"> </label>
+                <input type="text" id="email" class="email input">
+            </div>
+            <div class="input-div">
+                <label for="password" class="password-label label" id="password-label"> </label>
+                <input type="password" id="password" class="password input">
+            </div>
+            <p class="feedback-area" id="feedback-area"></p>
+            <button type="submit" class="submit-button" id="sign-up-button"></button>
+        </form>
+    </div>
 </body>
 <script type="module" src="./registration.js"></script>
 </html>

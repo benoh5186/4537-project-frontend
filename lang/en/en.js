@@ -1,5 +1,7 @@
 export class UserInterfaceString {
-    static LOGIN_BUTTON = "Sign In"
+    static LOGIN_HEADER = "Log in"
+    static REGISTRATION_HEADER = "Sign up"
+    static LOGIN_BUTTON = "Log In"
 
     static SIGN_UP_BUTTON = "Sign Up"
 
@@ -9,9 +11,9 @@ export class UserInterfaceString {
 
     static REGISTRATION_DOMAIN = "http://localhost:8000/api/auth/signup"
 
-    static EMAIL_PLACEHOLDER = "Email:"
+    static EMAIL_PLACEHOLDER = "Email"
 
-    static PASSWORD_PLACEHOLDER = "Password:"
+    static PASSWORD_PLACEHOLDER = "Password"
 
     static INCORRECT_EMAIL_FORMAT = "Invalid email format"
 

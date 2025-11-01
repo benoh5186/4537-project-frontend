@@ -3,12 +3,16 @@ import { UserInterfaceString } from "../lang/en/en.js";
 
 const registrationForm = document.getElementById("registration-form");
 const emailInput = document.getElementById("email");
+const emailLabel = document.getElementById("email-label");
+const passwordLabel = document.getElementById("password-label");
 const passwordInput = document.getElementById("password");
 const feedbackArea = document.getElementById("feedback-area")
 const signUpButton = document.getElementById("sign-up-button")
+const header = document.getElementById("auth-header")
 
-emailInput.placeholder = UserInterfaceString.EMAIL_PLACEHOLDER;
-passwordInput.placeholder = UserInterfaceString.PASSWORD_PLACEHOLDER;
+header.textContent = UserInterfaceString.REGISTRATION_HEADER
+emailLabel.textContent = UserInterfaceString.EMAIL_PLACEHOLDER
+passwordLabel.textContent = UserInterfaceString.PASSWORD_PLACEHOLDER
 signUpButton.textContent = UserInterfaceString.SIGN_UP_BUTTON
 
 registrationForm.addEventListener("submit", async (e) => {
