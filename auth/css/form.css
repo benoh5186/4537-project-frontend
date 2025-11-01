@@ -11,7 +11,7 @@ body {
     padding: 48px 56px;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    width: 60%;
+    width: 40%;
 }
 
 .auth-header {
@@ -54,4 +54,23 @@ body {
 .submit-button:hover {
     background-color: #006671;
     transition: 0.3s;
+}
+
+@media (max-width: 800px) {
+    .submit-button {
+        font-size: 11px;
+        width: 40%;
+    }
+}
+
+@media (max-width: 510px) {
+    .submit-button {
+        width: 60%;
+    }
+}
+
+@media (max-width: 345px) {
+    .submit-button {
+        width: 80%;
+    }
 }
