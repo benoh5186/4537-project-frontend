@@ -105,7 +105,14 @@ class LoginHandler extends AuthHandler{
      */
     static async handleResponse(response, feedbackArea) {
         if(response.ok) {
-            window.location.href = "../service/landing_page.html"
+            const data = await response.json()
+            const isAdmin = data.is_admin;
+            console.log(isAdmin)
+            if (isAdmin) {
+                window.location.href = "../service/admin.html"
+            } else {
+                window.location.href = "../service/landing_page.html"
+            }
         } 
         else {
             const data = await response.json();
