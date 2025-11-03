@@ -1,4 +1,4 @@
-import {UserInterfaceString} from "../lang/en/en"
+import {UserInterfaceString} from "../lang/en/en.js"
 
 const form = document.getElementById('io-form');
 const input = document.getElementById('inputText');
