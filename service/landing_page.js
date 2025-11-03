@@ -48,3 +48,12 @@ clearBtn.addEventListener('click', () => {
     output.value = ""
     input.focus()
 })
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const response = await fetch(UserInterfaceString.SESSION_DOMAIN, {
+            credentials : "include"
+        })
+        if (!response.ok) {
+            window.location.href = "../auth/signin.html"
+        } 
+})
