@@ -5,11 +5,11 @@ export class UserInterfaceString {
 
     static SIGN_UP_BUTTON = "Sign Up"
 
-    static SESSION_DOMAIN = "https://four537-backend-api.onrender.com/api/auth/authenticate"
+    static SESSION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/authenticate"
 
-    static LOGIN_DOMAIN = "https://four537-backend-api.onrender.com/api/auth/login"
+    static LOGIN_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/login"
 
-    static REGISTRATION_DOMAIN = "https://four537-backend-api.onrender.com/api/auth/signup"
+    static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/signup"
 
     static EMAIL_PLACEHOLDER = "Email"
 
