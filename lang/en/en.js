@@ -11,6 +11,8 @@ export class UserInterfaceString {
 
     static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/signup"
 
+    static AI_SERVICE_DOMAIN = "https://four537-backend-api.onrender.com/api/service/ai"
+
     static EMAIL_PLACEHOLDER = "Email"
 
     static PASSWORD_PLACEHOLDER = "Password"

@@ -6,7 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    hi
+     <h1>Landing Page</h1>
+
+  <form id="io-form">
+    <label for="inputText">Input (plain text):</label><br />
+    <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
+    <p id="errorMsg"></p>
+
+    <button type="submit">Submit</button>
+    <button type="button" id="clearBtn">Clear</button>
+    <br /><br />
+
+    <label for="outputJson">Output (JSON):</label><br />
+    <textarea id="outputJson" rows="20" cols="100" readonly ></textarea>
+  </form>
     
+  <script type="module" src="landing_page.js"></script>
 </body>
 </html>
