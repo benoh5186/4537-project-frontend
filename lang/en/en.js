@@ -11,6 +11,8 @@ export class UserInterfaceString {
 
     static REGISTRATION_DOMAIN = "https://four537-backend-api.onrender.com/api/auth/signup"
 
+    static AI_SERVICE_DOMAIN = "https://four537-backend-api.onrender.com/api/service/ai"
+
     static EMAIL_PLACEHOLDER = "Email"
 
     static PASSWORD_PLACEHOLDER = "Password"
