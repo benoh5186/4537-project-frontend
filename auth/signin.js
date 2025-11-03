@@ -23,5 +23,5 @@ signInForm.addEventListener("submit", async (e) => {
 })
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await LoginHandler.handleSession(UserInterfaceString.SESSION_DOMAIN)
+    await LoginHandler.authenticate(UserInterfaceString.SESSION_DOMAIN)
 })

@@ -59,7 +59,7 @@ class AuthHandler {
      * 
      * @param {string} url - The session validation endpoint URL
      */
-    static async handleSession(url) {
+    static async authenticate(url) {
         const response = await fetch(url, {
             credentials : "include"
         })
