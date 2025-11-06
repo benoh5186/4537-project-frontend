@@ -55,8 +55,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         })
         if (response.ok) {
             const data = await response.json()
-            if (data["is_admin"]) {
-                window.location.href = "../service/admin.html"
+            if (!data["is_admin"]) {
+                window.location.href = "../service/landing_page.html"
             }
         } else {
             window.location.href = "../auth/signin.html"

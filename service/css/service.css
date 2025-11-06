@@ -1,0 +1,60 @@
+body {
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+   background-color: #ffffec;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+}
+
+
+.form {
+   background-color: white;
+   padding: 48px 56px;
+   border-radius: 8px;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+   width: 80%;
+}
+
+label {
+   font-weight: 600;
+   font-size: 16px;
+   color: #555;
+   display: block;
+}
+
+
+textarea {
+   width: 100%;
+   padding: 1rem;
+   border: 2px solid #e0e0e0;
+   border-radius: 8px;
+   font-family: 'Monaco', 'Courier New', monospace;
+}
+
+button {
+   cursor: pointer;
+   font-size: 15px;
+   padding: 0.75rem 2rem;
+   border-radius: 20px;
+   border: none;
+}
+
+.submit-button {
+   color: white;
+   background-color: #007C89;
+}
+
+.submit-button:hover {
+   background-color: #006671;
+   transition: 0.3s;
+}
+
+.clear-button:hover {
+   background-color: #c2c2c2;
+   transition: 0.3s;
+}
+
+.outputJson {
+   background-color: #f8f9fa;
+}

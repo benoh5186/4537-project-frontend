@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/service.css">
 </head>
 <body>
-im admin
+    <body>
+        <div class="form">
+          <h1>Admin Page</h1>
+          
+            <form id="io-form">
+              <label for="inputText">Input (plain text):</label><br />
+              <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
+              <p id="errorMsg"></p>
+              <button class="submit-button" type="submit">Submit</button>
+              <button class="clear-button" type="button" id="clearBtn">Clear</button>
+              <br /><br />
+          
+              <label class="labelJson" for="outputJson">Output (JSON):</label><br />
+              <textarea class="outputJson" id="outputJson" rows="20" cols="100" readonly ></textarea>
+            </form>
+        </div>
 </body>
+<script type="module" src="admin.js"></script>
 </html>

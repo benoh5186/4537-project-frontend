@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/service.css">
 </head>
 <body>
-     <h1>Landing Page</h1>
-
-  <form id="io-form">
-    <label for="inputText">Input (plain text):</label><br />
-    <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
-    <p id="errorMsg"></p>
-
-    <button type="submit">Submit</button>
-    <button type="button" id="clearBtn">Clear</button>
-    <br /><br />
-
-    <label for="outputJson">Output (JSON):</label><br />
-    <textarea id="outputJson" rows="20" cols="100" readonly ></textarea>
-  </form>
+     <div class="form">
+       <h1>Landing Page</h1>
+       
+         <form id="io-form">
+           <label for="inputText">Input (plain text):</label><br />
+           <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
+           <p id="errorMsg"></p>
+           <button class="submit-button" type="submit">Submit</button>
+           <button class="clear-button" type="button" id="clearBtn">Clear</button>
+           <br /><br />
+       
+           <label class="labelJson" for="outputJson">Output (JSON):</label><br />
+           <textarea class="outputJson" id="outputJson" rows="20" cols="100" readonly ></textarea>
+         </form>
+     </div>
     
   <script type="module" src="landing_page.js"></script>
 </body>
