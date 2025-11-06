@@ -21,9 +21,12 @@ form.addEventListener('submit', async (e) => {
       const res = await fetch(UserInterfaceString.AI_SERVICE_DOMAIN, {
         method: "POST",
         headers: {
+
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
+        credentials: "include"
+        ,
         body: JSON.stringify({ text, lang: "en" })
       });
 

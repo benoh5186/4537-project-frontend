@@ -24,6 +24,7 @@ form.addEventListener('submit', async (e) => {
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify({ text, lang: "en" })
       });
 
