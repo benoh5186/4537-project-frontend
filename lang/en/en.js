@@ -19,7 +19,7 @@ export class UserInterfaceString {
 
     static INCORRECT_EMAIL_FORMAT = "Invalid email format"
 
-    static INCORRECT_PASSWORD_LENGTH = "Password must be at least 8 characters"
+    static INCORRECT_PASSWORD_LENGTH = "Password must be at least 3 characters"
 
     static INCORRECT_PASSWORD = "Incorrect Password"
 
