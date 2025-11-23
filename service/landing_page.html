@@ -19,8 +19,20 @@
       </div>
        
          <form id="io-form">
-           <label for="inputText">Input (plain text):</label><br />
-           <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
+          <div class="options">
+            <button type="button" class="toggle active" id="toggle-text">Plain Text</button>
+            <button type="button" class="toggle" id="toggle-schema">Schema</button>
+          </div>
+          <div id="text-section">
+            <label for="inputText">plain text:</label>
+            <textarea id="inputText" name="inputText" rows="16" cols="100" ></textarea>
+          </div>
+          <div id="schema-section" style="display: none;">
+            <label for="schemaText">Text:</label>
+            <textarea id="schemaText" name="schemaText" rows="16" cols="20" ></textarea>
+            <label for="schema">Schema:</label>
+            <textarea name="schema" id="schema" rows="16" cols="20"></textarea>
+          </div>
            <p id="errorMsg"></p>
            <button class="submit-button" type="submit">Submit</button>
            <button class="clear-button" type="button" id="clearBtn">Clear</button>

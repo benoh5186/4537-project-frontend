@@ -73,3 +73,8 @@ button {
    justify-self: end;
    margin-bottom: 10px;
 }
+
+.toggle.active {
+   background-color: #007C89;
+   color: white;
+}
