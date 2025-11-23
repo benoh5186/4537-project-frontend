@@ -7,6 +7,7 @@ const clearBtn = document.getElementById('clearBtn');
 const errorP = document.getElementById("errorMsg");
 const apiUsage = document.getElementById("apiUsage");
 const profileButton = document.getElementById("profile-button")
+const langDropDown = document.getElementById("lang")
 
 profileButton.textContent = UserInterfaceString.PROFILE_BUTTON
 profileButton.onclick = () => {
@@ -62,7 +63,7 @@ async function textToJson(text) {
       },
       credentials: "include"
       ,
-      body: JSON.stringify({ text, lang: "en" })
+      body: JSON.stringify({ text, lang: langDropDown.value })
     });
 
     const isJson = res.headers.get("content-type")?.includes("application/json");
@@ -94,7 +95,7 @@ async function schemaToJson(schema, schemaText) {
       },
       credentials: "include"
       ,
-      body: JSON.stringify({ text: schemaText,lang: "en", schema : schema })
+      body: JSON.stringify({ text: schemaText,lang: langDropDown.value, schema : schema })
     });
 
     const isJson = res.headers.get("content-type")?.includes("application/json");
