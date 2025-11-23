@@ -37,7 +37,7 @@ async function fetchUsersAndMakeTable() {
 
   if (!usersRes.ok) {
     userTable.textContent = "Failed to load users.";
-  return;
+    return;
 }
 
   const users = await usersRes.json()

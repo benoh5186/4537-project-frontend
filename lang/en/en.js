@@ -17,7 +17,7 @@ export class UserInterfaceString {
 
     static AI_SERVICE_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai"
 
-    static USERS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/users"
+    static USERS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/admin/users"
 
     static DELETE_USER_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/admin/user/{uid}"
 
