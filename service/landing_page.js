@@ -6,6 +6,12 @@ const output = document.getElementById('outputJson');
 const clearBtn = document.getElementById('clearBtn');
 const errorP = document.getElementById("errorMsg");
 const apiUsage = document.getElementById("apiUsage");
+const profileButton = document.getElementById("profile-button")
+
+profileButton.textContent = UserInterfaceString.PROFILE_BUTTON
+profileButton.onclick = () => {
+  window.location.href = "../profile/profile.html"
+}
 
 const apiUsageCap = 20;
 

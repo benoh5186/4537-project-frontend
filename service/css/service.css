@@ -36,7 +36,7 @@ button {
    cursor: pointer;
    font-size: 15px;
    padding: 0.75rem 2rem;
-   border-radius: 20px;
+   border-radius: 10px;
    border: none;
 }
 
@@ -55,15 +55,21 @@ button {
    transition: 0.3s;
 }
 
+.profile-button{
+   color: white;
+   background-color: #007C89;
+}
+
+.profile-button:hover {
+   background-color: #006671;
+   transition: 0.3s;
+}
+
 .outputJson {
    background-color: #f8f9fa;
 }
 
-.header-row {
-      display: flex;
-      justify-content: space-between; /* left & right ends */
-      align-items: center;            /* vertical alignment */
-      width: 100%;
-      box-sizing: border-box;
-      padding: 0 16px;                /* optional: side padding */
-    }
+.api-usage {
+   justify-self: end;
+   margin-bottom: 10px;
+}
