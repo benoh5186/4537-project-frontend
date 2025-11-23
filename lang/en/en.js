@@ -27,4 +27,7 @@ export class UserInterfaceString {
 
     static USER_NOT_FOUND = "Email not registered"
 
+    static CREATE_ACCOUNT_TEXT = "If you're new, "
+
+    static CREATE_ACCOUNT_LINK_TEXT = "Create an account"
 }
