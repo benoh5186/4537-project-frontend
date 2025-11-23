@@ -3,6 +3,15 @@ import {UserInterfaceString} from "../lang/en/en.js"
 const userTable = document.querySelector(".user-table");
 const endpointTable = document.querySelector(".endpoint-table")
 
+const adminHeader = document.getElementById("admin-header")
+const profileButton = document.getElementById("profile-button")
+profileButton.textContent = UserInterfaceString.PROFILE_BUTTON
+adminHeader.textContent = UserInterfaceString.ADMIN_HEADER
+
+profileButton.onclick = () => {
+  window.location.href = "../profile/profile.html"
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
     const sessionRes = await fetch(UserInterfaceString.SESSION_DOMAIN, {
         credentials : "include"
@@ -38,7 +47,7 @@ async function fetchUsersAndMakeTable() {
   }
 
   if (!usersRes.ok) {
-    userTable.textContent = "Failed to load users.";
+    userTable.textContent = UserInterfaceString.FAILED_TO_LOAD_USERS;
     return;
 }
 
@@ -70,7 +79,7 @@ async function fetchEndpointsAndMakeTable() {
 function renderUsersTable(users) {
   userTable.innerHTML = ""
   if (!users.length) {
-        userTable.textContent = "No users found.";
+        userTable.textContent = UserInterfaceString.NO_USERS_FOUND;
         return;
   }
 
@@ -127,7 +136,7 @@ function renderUsersTable(users) {
 function renderEndpointTable(endpoints) {
   endpointTable.innerHTML = ""
   if (!endpoints.length) {
-        userTable.textContent = "No endpoints found.";
+        userTable.textContent = UserInterfaceString.NO_ENDPOINTS_FOUND;
         return;
   }
 
@@ -170,15 +179,6 @@ function renderEndpointTable(endpoints) {
   endpointTable.appendChild(table);
 
 }
-
-
-
-
-
-
-
-
-
 
 async function handleDeleteClick(uid) {
   const url = UserInterfaceString.DELETE_USER_DOMAIN.replace("{uid}", uid);

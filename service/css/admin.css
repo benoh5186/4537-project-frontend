@@ -1,0 +1,62 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.admin-section {
+    background-color: white;
+    padding: 28px 26px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+th {
+    background: #006671;
+    color: white;
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px 14px;
+    font-size: 15px;
+    border-bottom: 1px solid #e6e9ef;
+}
+
+button {
+    background-color: #007C89;
+    font-size: 15px;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.profile-button {
+    height: 50%;
+}
+
+button:hover {
+    background-color: #006671;
+    transition: 0.3s;
+}

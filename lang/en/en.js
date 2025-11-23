@@ -2,6 +2,9 @@ export class UserInterfaceString {
     static LOGIN_HEADER = "Log in"
     static REGISTRATION_HEADER = "Sign up"
     static LOGIN_BUTTON = "Log In"
+    static PROFILE_BUTTON = "Profile"
+
+    static ADMIN_HEADER = "Admin Page"
 
     static SIGN_UP_BUTTON = "Sign Up"
 
@@ -68,6 +71,12 @@ export class UserInterfaceString {
     static NEW_EMAIL = "New Email"
 
     static NEW_PASSWORD = "New Password"
+
+    static FAILED_TO_LOAD_USERS = "Failed to load users"
+
+    static NO_USERS_FOUND = "No users found"
+    
+    static NO_ENDPOINTS_FOUND = "No endpoints found"
 
 
 
