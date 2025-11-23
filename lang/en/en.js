@@ -15,7 +15,7 @@ export class UserInterfaceString {
     
     static CHANGE_PASSWORD_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/password"
 
-    static AI_SERVICE_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai"
+    static AI_SERVICE_DOMAIN_TEXT = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai/text"
 
     static USERS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/admin/users"
 

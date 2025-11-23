@@ -1,6 +1,7 @@
 import {UserInterfaceString} from "../lang/en/en.js"
 
 const userTable = document.querySelector(".user-table");
+const endpointTable = document.querySelector(".endpoint-table")
 
 document.addEventListener("DOMContentLoaded", async () => {
     const sessionRes = await fetch(UserInterfaceString.SESSION_DOMAIN, {
@@ -100,6 +101,72 @@ function renderUsersTable(users) {
   userTable.appendChild(table);
 
 }
+
+
+function renderEndpointTable(users) {
+  userTable.innerHTML = ""
+  if (!users.length) {
+        userTable.textContent = "No users found.";
+        return;
+  }
+
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+
+  const headers = ["Method", "Endpoint", "Requests", " "];
+  headers.forEach((text) => {
+      const th = document.createElement("th");
+      th.textContent = text;
+      headerRow.appendChild(th);
+  });
+
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
+  const tbody = document.createElement("tbody");
+
+  users.forEach((user) => {
+      const tr = document.createElement("tr");
+
+      const idTd = document.createElement("td");
+      idTd.textContent = user.uid;
+
+      const emailTd = document.createElement("td");
+      emailTd.textContent = user.email;
+
+      const usageTd = document.createElement("td");
+      usageTd.textContent = user.api_usage;
+
+      const deleteTd = document.createElement("td");
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete user";
+      deleteBtn.addEventListener("click", () => {
+          handleDeleteClick(user.uid);
+      });
+      deleteTd.appendChild(deleteBtn);
+
+      tr.appendChild(idTd);
+      tr.appendChild(emailTd);
+      tr.appendChild(usageTd);
+      tr.appendChild(deleteTd)
+
+      tbody.appendChild(tr);
+  });
+
+  table.appendChild(tbody);
+  endpointTable.appendChild(table);
+
+}
+
+
+
+
+
+
+
+
+
 
 async function handleDeleteClick(uid) {
   const url = UserInterfaceString.DELETE_USER_DOMAIN.replace("{uid}", uid);

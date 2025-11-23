@@ -21,7 +21,7 @@ form.addEventListener('submit', async (e) => {
     }
 
     try {
-      const res = await fetch(UserInterfaceString.AI_SERVICE_DOMAIN, {
+      const res = await fetch(UserInterfaceString.AI_SERVICE_DOMAIN_TEXT, {
         method: "POST",
         headers: {
 
