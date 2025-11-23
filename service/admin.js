@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             window.location.href = "../service/landing_page.html"
         } else {
           await fetchUsersAndMakeTable()
+          await fetchEndpointsAndMakeTable()
         }
 
     } else {
@@ -45,6 +46,26 @@ async function fetchUsersAndMakeTable() {
 
   renderUsersTable(users)
 }
+
+
+async function fetchEndpointsAndMakeTable() {
+  const response = await fetch(UserInterfaceString.ENDPOINTS_DOMAIN, {
+    method: "GET",
+    credentials: "include"
+  }) 
+  if (response.ok) {
+    const endpoints = await response.json()
+    renderEndpointTable(endpoints)
+  } else  {
+    const status = response.status
+    if (status === 403) {
+      window.location.href = "../service/landing_page.html"
+    } else {
+      window.location.href = "../auth/signin.html"
+    }
+  }
+}
+
 
 function renderUsersTable(users) {
   userTable.innerHTML = ""
@@ -103,10 +124,10 @@ function renderUsersTable(users) {
 }
 
 
-function renderEndpointTable(users) {
-  userTable.innerHTML = ""
-  if (!users.length) {
-        userTable.textContent = "No users found.";
+function renderEndpointTable(endpoints) {
+  endpointTable.innerHTML = ""
+  if (!endpoints.length) {
+        userTable.textContent = "No endpoints found.";
         return;
   }
 
@@ -126,30 +147,21 @@ function renderEndpointTable(users) {
 
   const tbody = document.createElement("tbody");
 
-  users.forEach((user) => {
+  endpoints.forEach((endpoint) => {
       const tr = document.createElement("tr");
 
-      const idTd = document.createElement("td");
-      idTd.textContent = user.uid;
+      const methodTd = document.createElement("td");
+      methodTd.textContent = endpoint.http_method;
 
-      const emailTd = document.createElement("td");
-      emailTd.textContent = user.email;
+      const endpointTd = document.createElement("td");
+      endpointTd.textContent = endpoint.endpoint;
 
       const usageTd = document.createElement("td");
-      usageTd.textContent = user.api_usage;
+      usageTd.textContent = endpoint.request_count;
 
-      const deleteTd = document.createElement("td");
-      const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "Delete user";
-      deleteBtn.addEventListener("click", () => {
-          handleDeleteClick(user.uid);
-      });
-      deleteTd.appendChild(deleteBtn);
-
-      tr.appendChild(idTd);
-      tr.appendChild(emailTd);
+      tr.appendChild(methodTd);
+      tr.appendChild(endpointTd);
       tr.appendChild(usageTd);
-      tr.appendChild(deleteTd)
 
       tbody.appendChild(tr);
   });

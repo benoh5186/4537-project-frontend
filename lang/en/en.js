@@ -21,6 +21,8 @@ export class UserInterfaceString {
 
     static DELETE_USER_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/admin/user/{uid}"
 
+    static ENDPOINTS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/admin/endpoints"
+
     static EMAIL_PLACEHOLDER = "Email"
 
     static PASSWORD_PLACEHOLDER = "Password"
