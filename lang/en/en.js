@@ -5,17 +5,17 @@ export class UserInterfaceString {
 
     static SIGN_UP_BUTTON = "Sign Up"
 
-    static SESSION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/authenticate"
+    static SESSION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/authenticate"
 
-    static LOGIN_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/login"
+    static LOGIN_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/login"
 
-    static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/signup"
+    static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/signup"
 
     static CHANGE_EMAIL_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/email"
     
     static CHANGE_PASSWORD_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/password"
 
-    static AI_SERVICE_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/service/ai"
+    static AI_SERVICE_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai"
 
     static EMAIL_PLACEHOLDER = "Email"
 
