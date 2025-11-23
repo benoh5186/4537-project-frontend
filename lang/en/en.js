@@ -46,4 +46,24 @@ export class UserInterfaceString {
     static CREATE_ACCOUNT_TEXT = "If you're new, "
 
     static CREATE_ACCOUNT_LINK_TEXT = "Create an account"
+
+    static PROFILE_INFO = "Your Profile"
+
+    static ACCOUNT_INFO = "Account Info"
+
+    static PASSWORD_INFO = "*********"
+
+    static CHANGE_BUTTON = "Change"
+
+    static SAVE_BUTTON = "Save"
+
+    static CANCEL_BUTTON = "Cancel"
+
+    static NEW_EMAIL = "New Email"
+
+    static NEW_PASSWORD = "New Password"
+
+
+
+
 }

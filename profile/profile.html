@@ -8,41 +8,41 @@
 <link rel="stylesheet" href="./css/profile.css">
 <body>
     <div class="profile-container" id="profile-container">
-        <h2>Your Profile</h2>
-        <p class="profile-title">Account Info</p>
+        <h2 id="profile-info"></h2>
+        <p class="profile-title" id="account-info"></p>
         <div class="info-row">
             <div>
-                <div class="label" id="email-label">Email</div>
+                <div class="label" id="email-label"></div>
                 <div class="email-info" id="email-info"></div>
             </div>
-            <button class="edit" id="email-button">Change</button>
+            <button class="edit change" id="email-button"></button>
         </div>
         <div class="info-row">
             <div>
-                <div class="label">Password</div>
-                <div class="password-info" id="password-info">*********</div>
+                <div class="label" id="password-label"></div>
+                <div class="password-info" id="password-info"></div>
             </div>
-            <button class="edit" id="password-button">Change</button>
+            <button class="edit change" id="password-button"></button>
         </div>
         <div class="feedback" id="overall-feedback"></div>
     </div>
     <div class="overlay" id="overlay"></div>
     <div class="modal" id="email-modal">
-        <label for="new-email">New email</label>
+        <label for="new-email" id="new-email-label"></label>
         <input type="text" id="new-email">
         <p class="feedback" id="email-feedback"></p>
         <div class="modal-actions">
-            <button id="close-email">Cancel</button>
-            <button id="save-email">Save</button>
+            <button class="cancel" id="close-email"></button>
+            <button class="save" id="save-email"></button>
         </div>
     </div>
     <div class="modal" id="password-modal">
-        <label for="new-email">New Password</label>
+        <label for="new-password" id="new-password-label"></label>
         <input type="text" id="new-password">
         <p class="feedback" id="password-feedback""></p>
         <div class="modal-actions">
-            <button id="close-password">Cancel</button>
-            <button id="save-password">Save</button>
+            <button class="cancel" id="close-password"></button>
+            <button class="save" id="save-password"></button>
         </div>
     </div>
 </body>
