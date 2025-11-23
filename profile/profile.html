@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./css/profile.css">
+<body>
+    <div class="profile-container" id="profile-container">
+        <h2>Your Profile</h2>
+        <p class="profile-title">Account Info</p>
+        <div class="info-row">
+            <div>
+                <div class="label" id="email-label">Email</div>
+                <div class="email-info" id="email-info"></div>
+            </div>
+            <button class="edit" id="email-button">Change</button>
+        </div>
+        <div class="info-row">
+            <div>
+                <div class="label">Password</div>
+                <div class="password-info" id="password-info">*********</div>
+            </div>
+            <button class="edit" id="password-button">Change</button>
+        </div>
+        <div class="feedback" id="overall-feedback"></div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="modal" id="email-modal">
+        <label for="new-email">New email</label>
+        <input type="text" id="new-email">
+        <p class="feedback" id="email-feedback"></p>
+        <div class="modal-actions">
+            <button id="close-email">Cancel</button>
+            <button id="save-email">Save</button>
+        </div>
+    </div>
+    <div class="modal" id="password-modal">
+        <label for="new-email">New Password</label>
+        <input type="text" id="new-password">
+        <p class="feedback" id="password-feedback""></p>
+        <div class="modal-actions">
+            <button id="close-password">Cancel</button>
+            <button id="save-password">Save</button>
+        </div>
+    </div>
+</body>
+<script type="module" src="./profile.js"></script>
+<script type="module" src="./email.js"></script>
+<script type="module" src="./password.js"></script>
+</html>

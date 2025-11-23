@@ -11,6 +11,10 @@ export class UserInterfaceString {
 
     static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/auth/signup"
 
+    static CHANGE_EMAIL_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/email"
+    
+    static CHANGE_PASSWORD_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/password"
+
     static AI_SERVICE_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/service/ai"
 
     static EMAIL_PLACEHOLDER = "Email"
@@ -26,5 +30,17 @@ export class UserInterfaceString {
     static USER_ALREADY_EXISTS = "This email is already in use"
 
     static USER_NOT_FOUND = "Email not registered"
+
+    static SESSION_EXPIRED = "Session expired! please login and try again"
+
+    static SAME_EMAIL_FEEDBACK = "Please enter new email address"
+
+    static EMAIL_CHANGED_FEEDBACK = "Email successfully changed!"
+
+    static SAME_PASSWORD_FEEDBACK = "Please enter new password"
+
+    static PASSWORD_CHANGED_FEEDBACK = "Password successfully changed!"
+
+
 
 }
