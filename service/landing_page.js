@@ -5,6 +5,9 @@ const input = document.getElementById('inputText');
 const output = document.getElementById('outputJson');
 const clearBtn = document.getElementById('clearBtn');
 const errorP = document.getElementById("errorMsg");
+const apiUsage = document.getElementById("apiUsage");
+
+const apiUsageCap = 20;
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -39,7 +42,8 @@ form.addEventListener('submit', async (e) => {
         return;
       }
 
-      output.value = JSON.stringify(payload);
+      output.value = JSON.stringify(payload["data"]);
+      apiUsage.textContent = JSON.stringify(payload["api_usage"])
     } catch (err) {
       errorP.textContent = `Network error: ${String(err)}`;
       output.value = "";
@@ -54,14 +58,17 @@ clearBtn.addEventListener('click', () => {
 
 document.addEventListener("DOMContentLoaded", async () => {
     const response = await fetch(UserInterfaceString.SESSION_DOMAIN, {
-            credentials : "include"
-        })
-        if (response.ok) {
-            const data = await response.json()
-            if (data["is_admin"]) {
-                window.location.href = "../service/admin.html"
-            }
-        } else {
-            window.location.href = "../auth/signin.html"
+        credentials : "include"
+    })
+    if (response.ok) {
+        const data = await response.json()
+        if (data["is_admin"]) {
+            window.location.href = "../service/admin.html"
         }
+        const usage = data["api_usage"]
+
+        apiUsage.textContent = usage < apiUsageCap ? usage : "Warning: Exceeded default usage"
+    } else {
+        window.location.href = "../auth/signin.html"
+    }
 })

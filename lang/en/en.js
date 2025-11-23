@@ -43,4 +43,7 @@ export class UserInterfaceString {
 
 
 
+    static CREATE_ACCOUNT_TEXT = "If you're new, "
+
+    static CREATE_ACCOUNT_LINK_TEXT = "Create an account"
 }

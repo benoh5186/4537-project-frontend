@@ -74,3 +74,19 @@ body {
         width: 80%;
     }
 }
+
+.button-row {
+  display: flex;
+  justify-content: space-between;  /* left: sign-in, right: span+register */
+  align-items: center;
+  width: 100%;
+}
+/* 
+.right-group {
+  display: flex;
+  align-items: center;
+}
+
+.button-row .submit-button {
+  flex: 0 0 auto;
+} */

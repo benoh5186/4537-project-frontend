@@ -58,3 +58,12 @@ button {
 .outputJson {
    background-color: #f8f9fa;
 }
+
+.header-row {
+      display: flex;
+      justify-content: space-between; /* left & right ends */
+      align-items: center;            /* vertical alignment */
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 16px;                /* optional: side padding */
+    }
