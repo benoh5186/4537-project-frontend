@@ -18,6 +18,7 @@ const apiUsageCap = 20;
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault()
+    errorP.textContent = ""
 
     if (textButton.classList.contains("active")) {
       const text = (input.value || "").trim()
