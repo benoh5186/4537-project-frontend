@@ -42,7 +42,8 @@ form.addEventListener('submit', async (e) => {
         return;
       }
 
-      output.value = JSON.stringify(payload);
+      output.value = JSON.stringify(payload["data"]);
+      apiUsage.textContent = JSON.stringify(payload["api_usage"])
     } catch (err) {
       errorP.textContent = `Network error: ${String(err)}`;
       output.value = "";
