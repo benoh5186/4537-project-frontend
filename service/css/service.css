@@ -77,4 +77,23 @@ button {
 .toggle.active {
    background-color: #007C89;
    color: white;
+   margin-bottom: 10px;
 }
+
+.lang {
+   margin-top: 10px;
+   padding: 8px 12px;
+   font-size: 15px;
+   border-radius: 8px;
+   border: 1.5px solid #e0e0e0;
+   background: #fafafa;
+   cursor: pointer;
+   margin-bottom: 12px;
+}
+
+.lang:hover {
+   border-color: #2d6cdf;
+   background: #fff;
+   transition: 0.3s;
+}
+
