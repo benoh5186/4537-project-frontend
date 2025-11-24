@@ -137,10 +137,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             window.location.href = "../service/admin.html"
         }
         const usage = data["api_usage"]
-        console.log(usage);
-        
 
-        apiUsage.textContent = usage > apiUsageCap ? usage : `${usage} Warning! Exceeded default usage limit`
+        apiUsage.textContent = usage < apiUsageCap ? usage : `${usage} Warning! Exceeded default usage limit`
     } else {
         window.location.href = "../auth/signin.html"
     }
