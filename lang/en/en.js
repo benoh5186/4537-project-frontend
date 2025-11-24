@@ -1,31 +1,48 @@
+/**
+ * Centralized UI strings and API endpoint URLs used across the application.
+ *
+ * This class serves as a single source of truth for:
+ * - Button labels
+ * - Headings and labels
+ * - Validation and error messages
+ * - Backend API endpoint URLs
+ **/
 export class UserInterfaceString {
     static LOGIN_HEADER = "Log in"
     static REGISTRATION_HEADER = "Sign up"
     static LOGIN_BUTTON = "Log In"
     static PROFILE_BUTTON = "Profile"
-
     static ADMIN_HEADER = "Admin Page"
-
     static SIGN_UP_BUTTON = "Sign Up"
 
+    // Endpoint for checking if jwt is valid.
     static SESSION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/authenticate"
 
+    // Endpoint for login.
     static LOGIN_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/login"
 
+    // Endpoint for registration.
     static REGISTRATION_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/auth/signup"
 
+    // Endpoint for changing email.
     static CHANGE_EMAIL_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/email"
     
+    // Endpoint for changing password.
     static CHANGE_PASSWORD_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/user/password"
 
+    // Endpoint for ai service.
     static AI_SERVICE_DOMAIN_TEXT = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai/text"
 
+    // Endpoint for ai service with schema.
     static AI_SERVICE_DOMAIN_SCHEMA= "https://4537-backend-api-production-dd85.up.railway.app/api/v1/service/ai/schema"
 
+    // Endpoint for getting all users information.
     static USERS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/admin/users"
 
+    // Endpoint for deleting a user.
     static DELETE_USER_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/admin/user/{uid}"
 
+    // Endpoint for getting all endpoints information.
     static ENDPOINTS_DOMAIN = "https://4537-backend-api-production-dd85.up.railway.app/api/v1/admin/endpoints"
 
     static EMAIL_PLACEHOLDER = "Email"
@@ -52,8 +69,6 @@ export class UserInterfaceString {
 
     static PASSWORD_CHANGED_FEEDBACK = "Password successfully changed!"
 
-
-
     static CREATE_ACCOUNT_TEXT = "If you're new, "
 
     static CREATE_ACCOUNT_LINK_TEXT = "Create an account"
@@ -79,8 +94,4 @@ export class UserInterfaceString {
     static NO_USERS_FOUND = "No users found"
     
     static NO_ENDPOINTS_FOUND = "No endpoints found"
-
-
-
-
 }
