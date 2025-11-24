@@ -109,7 +109,9 @@ async function schemaToJson(schema, schemaText) {
     }
 
     output.value = JSON.stringify(payload["data"]);
-    apiUsage.textContent = JSON.stringify(payload["api_usage"])
+    
+    const usage = payload["api_usage"]
+    apiUsage.textContent = usage < apiUsageCap ? usage : `${usage} Warning! Exceeded default usage limit`
   } catch (err) {
     errorP.textContent = `Network error: ${String(err)}`;
     output.value = "";
